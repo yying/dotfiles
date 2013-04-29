@@ -2,14 +2,24 @@
 #
 # Sets up the dotfiles environment by creating the necessary symlinks
 
+info()
+{
+    echo "\033[32m\033[1m[*]\033[0m $1"
+}
+
+warn()
+{
+    echo "\033[31m\033[1mWARNING:\033[0m \033[33m$1\033[0m"
+}
+
 confirm() 
 {
     while true; do
-        read -p "$1 " yn
+        read -p " $1(Yy/Nn) " yn
         case $yn in
             [Yy]* ) return 0;;
             [Nn]* ) return 1;;
-            * ) echo "Please answer y/n.";;
+            * ) echo "\033[31mPlease answer y/n\033[0m";;
         esac
     done
 }
@@ -17,8 +27,8 @@ confirm()
 check_dir_exists()
 {
     if [ -d $1 ]; then
-        echo "  WARNING: directory $1 already exists!"
-        if ( confirm "  Save contents of old $1 to $1_old?" ); then
+        warn "directory $1 already exists!"
+        if ( confirm "Save contents of old $1 to $1_old?" ); then
             mv $1 $1_old
         else
             rm -rf $1
@@ -29,8 +39,8 @@ check_dir_exists()
 check_file_exists()
 {
     if [ -f $1 ]; then
-        echo "  WARNING: file $1 already exists!"
-        if ( confirm "  Save contents of old $1 to $1_old?" ); then
+        warn "file $1 already exists!"
+        if ( confirm "Save contents of old $1 to $1_old?" ); then
             mv $1 $1_old
         else
             rm -rf $1
@@ -53,7 +63,7 @@ meets_prereqs()
 
 setup_vim()
 {
-    echo "[*] Setting up vim configuration"
+    info "Setting up vim configuration"
     
     check_dir_exists ~/.vim
     ln -s $PWD/vim ~/.vim
@@ -64,7 +74,7 @@ setup_vim()
 
 setup_bash()
 {
-    echo "[*] Setting up bash configuration"
+    info "Setting up bash configuration"
 
     check_file_exists ~/.bashrc
     ln -s $PWD/bash/bashrc ~/.bashrc
@@ -78,7 +88,7 @@ setup_bash()
 
 setup_screen()
 {
-    echo "[*] Setting up screen configuration"
+    info "Setting up screen configuration"
     
     check_file_exists ~/.screenrc
     ln -s $PWD/screen/screenrc ~/.screenrc
@@ -87,7 +97,7 @@ setup_screen()
 main()
 {
     if ( ! meets_prereqs ); then
-        echo "WARNING: setup.sh needs to be run in the dotfiles/ repository directory"
+        warn "setup.sh needs to be run in the dotfiles/ repository directory"
         exit
     fi
 

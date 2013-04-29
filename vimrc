@@ -70,7 +70,7 @@ if has('gui')
         set guifont=Monaco:h10
     elseif has('win32')
         set guioptions-=m
-        set guifont=Lucida_Console:h8
+        set guifont=Consolas:h10
     else
         set guioptions-=m
         set guifont=Terminus\ 8
