@@ -18,7 +18,7 @@ endfunction
 
 function! ToggleLight()
     if (g:islight)
-        if has('gui')
+        if has('gui_running')
             set background=dark
             color solarized
         else
@@ -27,7 +27,7 @@ function! ToggleLight()
 
         let g:islight=0
     else
-        if has('gui')
+        if has('gui_running')
             color summerfruit256
         else
             color simpleandfriendly
@@ -62,7 +62,7 @@ let g:cursorcolumn=0
 " ***** GUI Options *****
 let g:islight=0
 
-if has('gui')
+if has('gui_running')
     set lsp=0
     set guioptions-=T
     
@@ -73,7 +73,7 @@ if has('gui')
         set guifont=Consolas:h10
     else
         set guioptions-=m
-        set guifont=Terminus\ 8
+        set guifont=Deja\ Vu\ Sans\ Mono\ 8
     endif
 
     set background=dark
