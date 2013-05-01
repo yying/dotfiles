@@ -31,13 +31,13 @@ GOTO :EOF
 
 :VimrcSymlink
 SET ERRORLEVEL=
-MKLINK %USERPROFILE%\_vimrc vimrc
+MKLINK %USERPROFILE%\_vimrc %cd%\vimrc
 IF ERRORLEVEL 9009 GOTO MklinkNotFound
 GOTO :EOF
 
 :VimfilesSymlink
 SET ERRORLEVEL=
-MKLINK /D %USERPROFILE%\vimfiles vim
+MKLINK /D %USERPROFILE%\vimfiles %cd%\vim
 IF ERRORLEVEL 9009 GOTO MklinkNotFound
 GOTO :EOF
 

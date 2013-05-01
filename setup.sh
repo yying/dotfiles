@@ -104,6 +104,8 @@ main()
     setup_vim
     setup_bash
     setup_screen
+
+    # TODO: grab exuberant ctags and build?
 }
 
 main
