@@ -95,10 +95,26 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+" ***** File Type Specific Options *****
+if has("python")
+    autocmd FileType python set omnifunc=pythoncomplete#Complete
+endif
+
+if has("ruby")
+    autocmd FileType ruby set omnifunc=rubycomplete#Complete
+endif
+
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
 " ***** Custom Plugin Options *****
 let g:tagbar_ctags_bin="e-ctags"
 
 " ***** Custom Keymappings *****
+" Map Ctrl-Space to Ctrl-x Ctrl-o
+inoremap <C-space> <C-x><C-o>
+
 " Map F2 to toggle between light and dark themes
 imap <silent> <F2> <ESC>:call ToggleLight()<CR>a
 map <silent> <F2> :call ToggleLight()<CR>

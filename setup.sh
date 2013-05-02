@@ -94,6 +94,12 @@ setup_screen()
     ln -s $PWD/screen/screenrc ~/.screenrc
 }
 
+post_setup()
+{
+    # TODO:
+    echo "Say stuff about MacVim and exuberant ctags here"
+}
+
 main()
 {
     if ( ! meets_prereqs ); then
@@ -105,7 +111,7 @@ main()
     setup_bash
     setup_screen
 
-    # TODO: grab exuberant ctags and build?
+    post_setup
 }
 
 main

@@ -1,5 +1,4 @@
 @ECHO OFF
-REM This is mostly untested for the moment
 
 IF NOT EXIST setup.sh GOTO BadPath
 IF NOT EXIST setup.bat GOTO BadPath
@@ -9,6 +8,12 @@ IF EXIST %USERPROFILE%\vimfiles CALL :PromptVimfiles
 
 CALL :VimrcSymlink
 CALL :VimfilesSymlink
+
+REM TODO: add stub about exuberant ctags
+REM TODO: add stub about splint
+REM TODO: add stub about jshint
+REM TODO: add stub about python
+REM TODO: add stub about ruby
 GOTO :EOF
 
 :PromptVimrc
