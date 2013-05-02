@@ -113,6 +113,7 @@ let g:tagbar_ctags_bin="e-ctags"
 
 " ***** Custom Keymappings *****
 " Map Ctrl-Space to Ctrl-x Ctrl-o
+" FIXME: this does not work on CLI on Apple Terminal
 inoremap <C-space> <C-x><C-o>
 
 " Map F2 to toggle between light and dark themes

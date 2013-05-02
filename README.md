@@ -4,8 +4,8 @@ On Linux/Mac OS X/FreeBSD, executing `setup.sh` should setup all the symlinks co
 
 On Windows, executing `setup.bat` should setup NTFS "symlinks" for Vim configuration files.
 
-Additional Downloads
---------------------
+Post-Install Additional Downloads
+---------------------------------
 [Tagbar](https://github.com/majutsushi/tagbar) requires exuberant ctags in order to function. Download exuberant ctags for Windows/Linux [here](http://ctags.sourceforge.net/).
 
 [Syntastic](https://raw.github.com/scrooloose/syntastic) support for JavaScript depends on several external JavaScript validation tools. I've had good success using [JSHint](https://github.com/jshint/jshint/). The easiest way to install is to install [node.js](http://nodejs.org/) and typing `npm install -g jshint`.

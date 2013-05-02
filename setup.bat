@@ -9,14 +9,11 @@ IF EXIST %USERPROFILE%\vimfiles CALL :PromptVimfiles
 CALL :VimrcSymlink
 CALL :VimfilesSymlink
 
-REM TODO: add stub about exuberant ctags
-REM TODO: add stub about splint
-REM TODO: add stub about jshint
-REM TODO: add stub about python
-REM TODO: add stub about ruby
+REM Please view README.md for post-install additional downloads.
 GOTO :EOF
 
 :PromptVimrc
+ECHO Found an existing _vimrc
 SET YN=
 SET /P YN=" Delete old vimrc? Y/N (Default:Y) "
 IF NOT "%YN%" == "N" GOTO DeleteVimrc
@@ -26,6 +23,7 @@ DEL %USERPROFILE%\_vimrc
 GOTO :EOF
 
 :PromptVimfiles
+ECHO Found an existing vimfiles
 SET YN=
 SET /P YN=" Delete old vimfiles? Y/N (Default:Y) "
 IF NOT "%YN%" == "N" GOTO DeleteVimfiles

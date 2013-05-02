@@ -96,8 +96,7 @@ setup_screen()
 
 post_setup()
 {
-    # TODO:
-    echo "Say stuff about MacVim and exuberant ctags here"
+    echo "Please view README.md for post-install additional downloads."
 }
 
 main()
