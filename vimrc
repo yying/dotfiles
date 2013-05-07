@@ -20,17 +20,17 @@ function! ToggleLight()
     if (g:islight)
         if has('gui_running')
             set background=dark
-            color solarized
+            execute "color " . g:dark_gui_theme
         else
-            color distinguished
+            execute "color " . g:dark_terminal_theme
         endif
 
         let g:islight=0
     else
         if has('gui_running')
-            color summerfruit256
+            execute "color " . g:light_gui_theme
         else
-            color simpleandfriendly
+            execute "color " . g:light_terminal_theme
         endif
 
         let g:islight=1
@@ -58,9 +58,17 @@ set history=5000
 set nocursorcolumn
 set completeopt=longest,menuone,preview
 let g:cursorcolumn=0
+set cursorline
 
 " ***** GUI Options *****
 let g:islight=0
+
+" ***** GUI Themes *****
+" Defines the global light and dark themes for both GUI and terminal
+let g:light_terminal_theme="simpleandfriendly"
+let g:dark_terminal_theme="distinguished"
+let g:light_gui_theme="summerfruit256"
+let g:dark_gui_theme="solarized"
 
 if has('gui_running')
     set lsp=0
@@ -77,9 +85,9 @@ if has('gui_running')
     endif
 
     set background=dark
-    color solarized
+    execute "color " . g:dark_gui_theme
 else
-    color distinguished
+    execute "color " . g:dark_terminal_theme
 endif
 
 " ***** Syntax highlighting/formatting *****

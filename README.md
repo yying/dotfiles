@@ -28,3 +28,15 @@ I recommend the following sequence of commands for installing MacVim (make sure 
     sudo ln -s /usr/local/bin/mvim /usr/bin/gvim
 
 If you happen to actually use Vim by calling `vi`, you can replace `/usr/bin/vi` with `/usr/bin/vim_old`.
+
+Mac OS X Post-Install Optional Settings
+---------------------------------------
+__Terminal.app__
+The default keymappings for `PageUp` and `PageDown` should be the following:
+
+    Home:     \033[1~
+    End:      \033[4~
+    PageUp:   \033[5~
+    PageDown: \033[6~
+
+
