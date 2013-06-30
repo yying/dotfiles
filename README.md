@@ -39,4 +39,12 @@ The default keymappings for `PageUp` and `PageDown` should be the following:
     PageUp:   \033[5~
     PageDown: \033[6~
 
-
+Using Vim
+---------
+`Ctrl-L` - "smart" code completion
+`Ctrl-]` - jumps to the tag definition
+`Ctrl-T` - jumps to the previous location
+`F2`     - toggles between a "light" and "dark" color scheme
+`F3`     - toggles cursor column
+`F4`     - toggles Tagbar
+`F5`     - builds the project using `make` (for `Makefile` based projects)

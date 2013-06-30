@@ -5,7 +5,7 @@ call pathogen#infect()
 
 " ***** Custom functions *****
 function! ToggleCursorColumn()
-    if(g:cursorcolumn)
+    if (g:cursorcolumn)
         set nocursorcolumn
         set completeopt=longest,menuone,preview
         let g:cursorcolumn=0
@@ -37,6 +37,51 @@ function! ToggleLight()
     endif
 endfunction
 
+function! FindTagsFile()
+    let mods = ":p:h"
+    let dir = expand("%" . mods)
+    let olddir = ""
+
+    while !filereadable(dir . "/tags") && dir != olddir
+        let olddir = dir
+        let mods .= ":h"
+        let dir = expand("%" . mods)
+    endwhile
+
+    if filereadable(dir . "/tags")
+        let tags = dir . "/tags"
+        return 1
+    else
+        return 0
+    endif
+endfunction
+
+function! ToggleTagbarWindow()
+    if (g:show_tagbar)
+        execute "TagbarClose"
+        let g:show_tagbar=0
+    else
+        if (FindTagsFile())
+            echo "Found tags file at " . tags
+        else
+            execute "!" . g:tagbar_ctags_bin . " --verbose=yes -R ."
+            echo "Generated tags file..."
+        endif
+
+        execute "TagbarOpen"
+        let g:show_tagbar=1
+    endif
+endfunction
+
+function! BuildProject()
+    if filereadable("Makefile")
+        execute "make"
+        execute "copen"
+    else
+        echo "No build system default found"
+    endif
+endfunction
+
 " ***** Standard options *****
 set nocompatible
 set backspace=2
@@ -59,6 +104,9 @@ set nocursorcolumn
 set completeopt=longest,menuone,preview
 let g:cursorcolumn=0
 set cursorline
+
+" ***** Don't show Tagbar by default *****
+let g:show_tagbar=0
 
 " ***** GUI Options *****
 let g:islight=0
@@ -120,9 +168,8 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 let g:tagbar_ctags_bin="e-ctags"
 
 " ***** Custom Keymappings *****
-" Map Ctrl-Space to Ctrl-x Ctrl-o
-" FIXME: this does not work on CLI on Apple Terminal
-inoremap <C-space> <C-x><C-o>
+" Map Ctrl-l to Ctrl-x Ctrl-o
+inoremap <C-l> <C-x><C-o>
 
 " Map F2 to toggle between light and dark themes
 imap <silent> <F2> <ESC>:call ToggleLight()<CR>a
@@ -133,5 +180,7 @@ imap <silent> <F3> <ESC>:call ToggleCursorColumn()<CR>a
 map <silent> <F3> :call ToggleCursorColumn()<CR>
 
 " Map F4 to toggling Tagbar
-nmap <F4> :TagbarToggle<CR>
+nmap <F4> :call ToggleTagbarWindow()<CR>
 
+" Map F5 to build Makefile projects
+nmap <F5> :call BuildProject()<CR>
