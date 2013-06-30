@@ -24,5 +24,10 @@ export TERM
 PS1="\033[36m[\t]\033[0m \033[32m\u@\h:\033[0m\033[33m\w\033[0m\$(get_git_branch) \n\$(ifs_prompt) "
 export PS1
 
-alias ls='ls -G'
+if [ `uname` == "Darwin" ]; then
+    alias ls='ls -G'
+else
+    alias ls='ls --color'
+fi
+
 alias grep='grep --color=auto'
