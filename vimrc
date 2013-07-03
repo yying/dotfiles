@@ -49,11 +49,17 @@ function! FindTagsFile()
     endwhile
 
     if filereadable(dir . "/tags")
-        let tags = dir . "/tags"
+        execute "set tags=" . dir . "/tags"
+        echo "Found tags at " . dir . "/tags"
         return 1
     else
         return 0
     endif
+endfunction
+
+function! GenerateCTags()
+    execute "!" . g:tagbar_ctags_bin . " --verbose=yes -R ."
+    echo "Generated tags file..."
 endfunction
 
 function! ToggleTagbarWindow()
@@ -61,13 +67,9 @@ function! ToggleTagbarWindow()
         execute "TagbarClose"
         let g:show_tagbar=0
     else
-        if (FindTagsFile())
-            echo "Found tags file at " . tags
-        else
-            execute "!" . g:tagbar_ctags_bin . " --verbose=yes -R ."
-            echo "Generated tags file..."
+        if (!FindTagsFile())
+            call GenerateCTags()
         endif
-
         execute "TagbarOpen"
         let g:show_tagbar=1
     endif
