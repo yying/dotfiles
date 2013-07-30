@@ -31,3 +31,4 @@ else
 fi
 
 alias grep='grep --color=auto'
+alias irssi='TERM=screen-256color irssi'
