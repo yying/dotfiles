@@ -131,7 +131,7 @@ if has('gui_running')
         set guifont=Consolas:h10
     else
         set guioptions-=m
-        set guifont=Deja\ Vu\ Sans\ Mono\ 8
+        set guifont=Ubuntu\ Mono\ 8
     endif
 
     set background=dark
