@@ -6,9 +6,11 @@ On Windows, executing `setup.bat` should setup NTFS "symlinks" for Vim configura
 
 Post-Install Additional Downloads
 ---------------------------------
-[Tagbar](https://github.com/majutsushi/tagbar) requires exuberant ctags in order to function. Download exuberant ctags for Windows/Linux [here](http://ctags.sourceforge.net/).
+[Tagbar](https://github.com/majutsushi/tagbar) requires **exuberant ctags** in order to function. Download exuberant ctags for Windows/Linux [here](http://ctags.sourceforge.net/).
 
 [Syntastic](https://raw.github.com/scrooloose/syntastic) support for JavaScript depends on several external JavaScript validation tools. I've had good success using [JSHint](https://github.com/jshint/jshint/). The easiest way to install is to install [node.js](http://nodejs.org/) and typing `npm install -g jshint`.
+
+**pylint** is another useful tool for Python programming when used with **Syntastic**
 
 Windows Specific Downloads
 --------------------------
