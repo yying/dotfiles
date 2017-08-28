@@ -25,7 +25,7 @@ PS1="\033[36m[\t]\033[0m \033[32m\u@\h:\033[0m\033[33m\w\033[0m\$(get_git_branch
 export PS1
 
 if [ `uname` == "Darwin" ]; then
-    alias ls='ls -G'
+    alias ls='ls'
 else
     alias ls='ls --color'
 fi
