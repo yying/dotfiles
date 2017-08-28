@@ -125,7 +125,7 @@ if has('gui_running')
     set guioptions-=T
     
     if has('macunix')
-        set guifont=Monaco:h10
+        set guifont=Monaco:h11
     elseif has('win32')
         set guioptions-=m
         set guifont=Consolas:h10
