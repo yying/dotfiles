@@ -16,3 +16,6 @@
 [submodule "vim/bundle/python-mode"]
 	path = vim/bundle/python-mode
 	url = https://github.com/python-mode/python-mode.git
+[submodule "vim/bundle/vim-cpp-modern"]
+	path = vim/bundle/vim-cpp-modern
+	url = https://github.com/bfrg/vim-cpp-modern
