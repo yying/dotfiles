@@ -86,6 +86,19 @@ setup_bash()
     ln -s $PWD/bash/inputrc ~/.inputrc
 }
 
+setup_zsh()
+{
+    info "Setting up zsh configuration"
+    
+    check_file_exists ~/.zshrc
+    ln -s $PWD/zsh/zshrc ~/.zshrc
+
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+    ln -s $PWD/zsh/powerlevel10k/powerlevel10k.zsh-theme ~/.oh-my-zsh/themes/powerlevel10k.zsh-theme
+    ln -s $PWD/zsh/p10k.zsh ~/.p10k.zsh
+}
+
 setup_screen()
 {
     info "Setting up screen configuration"
@@ -108,6 +121,7 @@ main()
 
     setup_vim
     setup_bash
+    setup_zsh
     setup_screen
 
     post_setup
