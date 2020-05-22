@@ -2,7 +2,7 @@
 ## Keybindings
 Go to **Edit ➡ Tool Options**. Once the modal pops up, go to **Key Bindings** and select **Import...**. Find `dotfiles/apps/ghidra/default.kbxml` and import.
 
-**NOTE**: The configuration is assuming MacOS -- Windows may need to change `Meta` modifier to `Ctrl`.
+**NOTE**: The configuration ignores key bindings that may differ between operating systems (e.g. any commands requiring the use of the `Ctrl` or `Meta` key)
 
 ## Setting up cursor text highlighting
 ![Cursor Text Highlighting](https://github.com/yying/dotfiles/raw/master/apps/ghidra/imgs/cursor_text_highlight.png)
