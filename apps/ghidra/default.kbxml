@@ -68,10 +68,6 @@
         <STATE NAME="KeyCode" TYPE="int" VALUE="59" />
         <STATE NAME="Modifiers" TYPE="int" VALUE="0" />
     </WRAPPED_OPTION>
-    <WRAPPED_OPTION NAME="Redo (ProgramManagerPlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
-        <STATE NAME="KeyCode" TYPE="int" VALUE="90" />
-        <STATE NAME="Modifiers" TYPE="int" VALUE="325" />
-    </WRAPPED_OPTION>
     <WRAPPED_OPTION NAME="Add Bookmark (BookmarkPlugin)" CLASS="ghidra.framework.options.WrappedKeyStroke">
         <STATE NAME="KeyCode" TYPE="int" VALUE="77" />
         <STATE NAME="Modifiers" TYPE="int" VALUE="520" />
