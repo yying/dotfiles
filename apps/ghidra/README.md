@@ -10,3 +10,16 @@ Go to **Edit -> Tool Options**. Once the modal pops up, go to **Key Bindings** a
 
 ## Setting up function signature fields
 ![Function Signature Fields](https://github.com/yying/dotfiles/raw/master/apps/ghidra/imgs/function_signature_field.png)
+
+## Disable register renaming
+![Disable Register Renaming](https://github.com/yying/dotfiles/raw/master/apps/ghidra/imgs/dont_rename_registers.png)
+
+## Display end-of-line comments
+![Display end-of-line comments](https://github.com/yying/dotfiles/raw/master/apps/ghidra/imgs/display_eol_comments.png)
+
+## Display namespaces in Decompiler
+![Display namespaces in Decompiler](https://github.com/yying/dotfiles/raw/master/apps/ghidra/imgs/display_namespaces.png)
+
+## Route edges around vertices
+![Route edges around vertices](https://github.com/yying/dotfiles/raw/master/apps/ghidra/imgs/route_around_vertices.png)
+
