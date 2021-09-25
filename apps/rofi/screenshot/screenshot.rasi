@@ -13,9 +13,7 @@ configuration {
     foreground: #93a1a1;
     on: #5BB462;
     off: #DE635E;
-}
 
-* {
     background-color: @background;
     text-color: @foreground;
 }
