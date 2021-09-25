@@ -7,7 +7,7 @@ configuration {
 
 
 * {
-    accent: #2aa198;
+    accent: #bac2c4;
     background: #222d31;
     background-light: #454947;
     foreground: #93a1a1;
@@ -20,11 +20,11 @@ configuration {
 
 window {
     transparency: "real";
-    border-radius: 0px;
-    location: center;
-    width: 500px;
-    x-offset: 0px;
-    y-offset: 0px;
+    border-radius: 10px;
+    location: southeast;
+    width: 250px;
+    x-offset: -15px;
+    y-offset: -45px;
 }
 
 prompt {
@@ -72,8 +72,8 @@ listview {
 mainbox {
     background-color: @background;
     children: [ inputbar, listview ];
-    spacing: 15px;
-    margin: 40px;
+    spacing: 12px;
+    margin: 12px;
 }
 
 element {
@@ -90,7 +90,7 @@ element-text {
     expand: true;
     horizontal-align: 0.5;
     vertical-align: 0.5;
-    margin: 40px 0px 40px 0px;
+    margin: 10px;
 }
 
 element normal.urgent,
