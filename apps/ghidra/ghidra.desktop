@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Ghidra
+Comment=Reverse Engineering Tool
+GenericName=Reverse Engineering
+Exec=/usr/bin/ghidra
+Icon=/opt/ghidra/docs/GhidraClass/AdvancedDevelopment/Images/GhidraLogo64.png
+Type=Application
+StartupNotify=false
+StartupWMClass=Ghidra
+Categories=Utility;Development
+Keywords=ghidra
