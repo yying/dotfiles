@@ -1,0 +1,27 @@
+{
+    "telemetry.telemetryLevel": "off",
+    "update.mode": "start",
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "workbench.enableExperiments": false,
+    "editor.fontSize": 12,
+    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "debug.console.fontSize": 12,
+    "terminal.integrated.fontSize": 12,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "One Dark Pro Flat",
+    
+    "editor.semanticTokenColorCustomizations": {
+        "[One Dark Pro Flat]": {
+            // Apply to this theme only
+            "enabled": true,
+            "rules": {
+                "magicFunction:python": "#ee0000",
+                "function.declaration:python": "#990000",
+                "*.decorator:python": "#e96900",
+                "*.typeHint:python": "#5500aa",
+                "*.typeHintComment:python": "#aaaaaa",
+                //"parameter:python": "#aaaaaa"
+            }
+        }
+    }
+}
