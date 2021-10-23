@@ -8,20 +8,5 @@
     "debug.console.fontSize": 12,
     "terminal.integrated.fontSize": 12,
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "One Dark Pro Flat",
-    
-    "editor.semanticTokenColorCustomizations": {
-        "[One Dark Pro Flat]": {
-            // Apply to this theme only
-            "enabled": true,
-            "rules": {
-                "magicFunction:python": "#ee0000",
-                "function.declaration:python": "#990000",
-                "*.decorator:python": "#e96900",
-                "*.typeHint:python": "#5500aa",
-                "*.typeHintComment:python": "#aaaaaa",
-                //"parameter:python": "#aaaaaa"
-            }
-        }
-    }
+    "vim.useSystemClipboard": true
 }
